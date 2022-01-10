@@ -1,23 +1,24 @@
-import logo from './logo.svg';
 import './App.css';
+import AvengersIndex from './AvengersIndex';
+import {BrowserRouter as Routes, Route} from 'react-router-dom';
+import AvengerShow from './AvengerShow';
 
-function App() {
+
+const App = () => {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      Avengers App
+      <Routes>
+        <Route 
+          exact 
+          path="/" 
+          render={() => <AvengersIndex />}/>
+        <Route 
+          exact 
+          path="/avenger/:id"
+          render={routeProps => <AvengerShow {...routeProps}/>}
+          />
+      </Routes>
     </div>
   );
 }
