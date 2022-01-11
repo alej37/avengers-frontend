@@ -15,7 +15,7 @@ class Avenger extends Component {
                 <div className='description'>
                     <p>{description}</p>
                 </div>
-                <p>{status}</p>
+                <p>{status ?  "Alive" : "Deseased"}</p>
                 <p>{age}</p>
             </div>
 
