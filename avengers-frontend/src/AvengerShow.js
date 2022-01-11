@@ -1,3 +1,4 @@
+import './AvengerShow.css'
 import React, {Component} from 'react';
 import axios from 'axios';
 
@@ -32,8 +33,8 @@ class AvengerShow extends Component {
         
         const { superhero_name, real_name, age, description, status} = this.state.avenger;
         return (
-            <div>
-                <h1>{superhero_name}</h1>
+            <div className='avenger-card'>
+                <h1 className='avengerscard-title'>{superhero_name}</h1>
                 <h2>{real_name} </h2>
                 <div className='description'>
                     <p>{description}</p>

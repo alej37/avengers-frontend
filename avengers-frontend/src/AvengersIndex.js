@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import axios from 'axios';
 import Avenger from './Avenger';
 import { Link } from 'react-router-dom';
+import './AvengersIndex.css'
 
 
 
@@ -20,7 +21,6 @@ class AvengersIndex extends Component {
     componentDidMount() {
         axios.get(AVENGERS_API)
             .then( response => {
-                console.log(response)
                 this.setState({avengersArray: response.data});
             })
             .catch( error => {
@@ -29,21 +29,24 @@ class AvengersIndex extends Component {
     }
     render() {
         return (
-            <div className='avenger-card'>
-                {this.state.avengersArray.map( avenger => 
-                    <Avenger 
-                        id={avenger.id}
-                        key={avenger.id}
-                        superhero_name = {<Link to={`avenger/${avenger.id}`}>{avenger.superhero_name}</Link>}
-                        real_name = {avenger.real_name}
-                        description = {avenger.description}
-                        status = {avenger.status}
-                        age = {avenger.age}
-                    >
+            <div className='avenger'>
+                    {this.state.avengersArray.map( avenger => 
+                        <div className='avenger-card-display'>
+                            <Avenger 
+                                id={avenger.id}
+                                key={avenger.id}
+                                superhero_name = {<Link to={`avenger/${avenger.id}`}>{avenger.superhero_name}</Link>}
+                                real_name = {avenger.real_name}
+                                description = {avenger.description}
+                                status = {avenger.status}
+                                age = {avenger.age}
+                            >
+                            
+                            </Avenger>
                         
-                    </Avenger>
-                    
-                    )}
+                        </div>
+                        )}
+
             </div>
         )
     }
