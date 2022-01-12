@@ -1,10 +1,14 @@
-.App {
+body {
+  margin: 0;
+  height: 100vh;
   background-color: black;
   text-align: center;
 }
 
-h1{
+.App-title{
   color: white; 
+  margin: 0 auto;
+  font-size: 45px;
 }
 
 

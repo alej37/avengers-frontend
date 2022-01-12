@@ -7,7 +7,9 @@ import AvengerShow from './AvengerShow';
 const App = () => {
   return (
     <div className="App">
-      <h1>Avengers App</h1>
+      <div className='App-title'>
+        <h1>Avengers App</h1>
+      </div>
       <Routes>
         <Route 
           exact 
@@ -15,7 +17,7 @@ const App = () => {
           render={() => <AvengersIndex />}/>
         <Route 
           exact 
-          path="/avenger/:id"
+          path="/avenger/:avenger_id"
           render={routeProps => <AvengerShow {...routeProps}/>}
           />
       </Routes>

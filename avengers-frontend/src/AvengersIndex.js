@@ -29,12 +29,10 @@ class AvengersIndex extends Component {
     }
     render() {
         return (
-            <div className='avenger'>
-                    {this.state.avengersArray.map( avenger => 
-                        <div className='avenger-card-display'>
+            <div className='AvengerIndex-container'>
+                    {this.state.avengersArray.map( (avenger) =>
+                        <div key={avenger.id} className='AvengerIndex-card-display'>
                             <Avenger 
-                                id={avenger.id}
-                                key={avenger.id}
                                 superhero_name = {<Link to={`avenger/${avenger.id}`}>{avenger.superhero_name}</Link>}
                                 real_name = {avenger.real_name}
                                 description = {avenger.description}

@@ -1,1 +1,25 @@
+.AvengerShow-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: #f0f3f4;
+    width: 50%;
+    margin: 0 auto;
+    position: relative;
+    top: 194px;
+    height: 50rem;
+}
 
+#AvengerShow-title {
+    color: #485448;
+    font-size: 5rem;
+}
+
+
+.AvengerShow-text h2{
+    font-size: 3rem;
+}
+
+.AvengerShow-text .description p{
+    font-size: 2rem;
+}

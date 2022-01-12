@@ -19,10 +19,11 @@ class AvengerShow extends Component {
         }
     }
     componentDidMount() {
-        let AVENGERS_API_WITH_ID = `http://localhost:3000/api/v1/avengers/${this.props.match.params.id}`;
+        let AVENGERS_API_WITH_ID = `http://localhost:3000/api/v1/avengers/${this.props.match.params.avenger_id}`;
         axios.get(AVENGERS_API_WITH_ID)
             .then( response => {
                 this.setState({avenger: response.data});
+                console.log(this.state.avenger)
             })
             .catch( error => {
                 console.log(error);
@@ -33,14 +34,17 @@ class AvengerShow extends Component {
         
         const { superhero_name, real_name, age, description, status} = this.state.avenger;
         return (
-            <div className='avenger-card'>
-                <h1 className='avengerscard-title'>{superhero_name}</h1>
-                <h2>{real_name} </h2>
-                <div className='description'>
-                    <p>{description}</p>
+            <div className='AvengerShow-container'>
+                <div className='AvengerShow-text'>
+                    <h1 id="AvengerShow-title">{superhero_name}</h1>
+                    <h2>Real Name: {real_name} </h2>
+                    <div className='description'>
+                        <p>Description: "{description}"</p>
+                        <p>Status: {status ?  "Alive" : "Deseased"}</p>
+                        <p>Age: {age}</p>
+                    </div>
+
                 </div>
-                <p>{status}</p>
-                <p>{age}</p>
             </div>
 
         )
